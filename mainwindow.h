@@ -44,8 +44,6 @@ private slots:
 
     void on_txtSearchDest_textChanged(const QString &arg1);
 
-    void on_btnExecSearch_clicked();
-
 private:
     Ui::MainWindow *ui;
 
