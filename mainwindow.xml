@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1150</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Bus Ticketing Management System</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="mainTabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      
+      <widget class="QWidget" name="tabFleet">
+       <attribute name="title">
+        <string>Fleet Logistics</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_1">
+        <item>
+         <widget class="QFrame" name="frameFleetLeft">
+          <property name="maximumSize">
+           <size><width>350</width><height>16777215</height></size>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QLabel" name="labelFleetTitle">
+             <property name="text">
+              <string>&lt;b&gt;Bus Fleet Configuration Panel (Admin)&lt;/b&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QFormLayout" name="formLayoutFleet">
+             <item row="0" column="0">
+              <widget class="QLabel" name="lblBusNo"><property name="text"><string>Bus Number:</string></property></widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLineEdit" name="txtBusNo"/>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="lblType"><property name="text"><string>Type:</string></property></widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QComboBox" name="cmbBusType">
+               <item><property name="text"><string>AC Coach</string></property></item>
+               <item><property name="text"><string>Non-AC Standard</string></property></item>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="lblCapacity"><property name="text"><string>Seating Capacity:</string></property></widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QSpinBox" name="spinCapacity">
+               <property name="value"><number>40</number></property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnRegisterVehicle">
+             <property name="text"><string>Register Vehicle</string></property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnDecommissionBus">
+             <property name="text"><string>Decommission Selected Bus</string></property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacerFleet">
+             <property name="orientation"><enum>Qt::Vertical</enum></property>
+             <property name="sizeHint" stdset="0"><size><width>20</width><height>40</height></size></property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tblBuses">
+          <column><property name="text"><string>Bus Number</string></property></column>
+          <column><property name="text"><string>Type</string></property></column>
+          <column><property name="text"><string>Capacity</string></property></column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+
+      <widget class="QWidget" name="tabRoutes">
+       <attribute name="title">
+        <string>Schedules Routes</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QFrame" name="frameRouteLeft">
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item><widget class="QLabel" name="labelRouteTitle"><property name="text"><string>&lt;b&gt;Route Definition Engine (Admin)&lt;/b&gt;</string></property></widget></item>
+             <item>
+              <layout class="QFormLayout" name="formLayoutRoute">
+               <item row="0" column="0"><widget class="QLabel" name="lblRouteID"><property name="text"><string>Route ID:</string></property></widget></item>
+               <item row="0" column="1"><widget class="QLineEdit" name="txtRouteID"/></item>
+               <item row="1" column="0"><widget class="QLabel" name="lblDepCity"><property name="text"><string>Departure City:</string></property></widget></item>
+               <item row="1" column="1"><widget class="QLineEdit" name="txtDepCity"/></item>
+               <item row="2" column="0"><widget class="QLabel" name="lblArrCity"><property name="text"><string>Arrival Destination:</string></property></widget></item>
+               <item row="2" column="1"><widget class="QLineEdit" name="txtArrCity"/></item>
+               <item row="3" column="0"><widget class="QLabel" name="lblDistance"><property name="text"><string>Distance (km):</string></property></widget></item>
+               <item row="3" column="1"><widget class="QDoubleSpinBox" name="spinDistance"/></item>
+              </layout>
+             </item>
+             <item><widget class="QPushButton" name="btnSaveRoute"><property name="text"><string>Save Route Layout</string></property></widget></item>
+             <item><spacer><property name="orientation"><enum>Qt::Vertical</enum></property></spacer></item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frameScheduleRight">
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <item><widget class="QLabel" name="labelSchedTitle"><property name="text"><string>&lt;b&gt;Trip Deployment Scheduler (Admin)&lt;/b&gt;</string></property></widget></item>
+             <item>
+              <layout class="QFormLayout" name="formLayoutSched">
+               <item row="0" column="0"><widget class="QLabel" name="lblSchedID"><property name="text"><string>Schedule ID:</string></property></widget></item>
+               <item row="0" column="1"><widget class="QLineEdit" name="txtSchedID"/></item>
+               <item row="1" column="0"><widget class="QLabel" name="lblTargetRoute"><property name="text"><string>Target Route Path:</string></property></widget></item>
+               <item row="1" column="1"><widget class="QComboBox" name="cmbTargetRoute"/></item>
+               <item row="2" column="0"><widget class="QLabel" name="lblAssignedBus"><property name="text"><string>Assigned Bus:</string></property></widget></item>
+               <item row="2" column="1"><widget class="QComboBox" name="cmbAssignedBus"/></item>
+               <item row="3" column="0"><widget class="QLabel" name="lblDepDate"><property name="text"><string>Departure Date:</string></property></widget></item>
+               <item row="3" column="1"><widget class="QDateEdit" name="dateDeparture"><property name="calendarPopup"><bool>true</bool></property></widget></item>
+               <item row="4" column="0"><widget class="QLabel" name="lblTimeWindow"><property name="text"><string>Time Window:</string></property></widget></item>
+               <item row="4" column="1"><widget class="QTimeEdit" name="timeWindow"/></item>
+               <item row="5" column="0"><widget class="QLabel" name="lblFare"><property name="text"><string>Base Fare ($):</string></property></widget></item>
+               <item row="5" column="1"><widget class="QDoubleSpinBox" name="spinBaseFare"/></item>
+              </layout>
+             </item>
+             <item><widget class="QPushButton" name="btnAuthSchedule"><property name="text"><string>Authorize Schedule</string></property></widget></item>
+             <item><widget class="QPushButton" name="btnTermTrip"><property name="text"><string>Terminate Trip Assignment</string></property></widget></item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_Search">
+          <item><widget class="QLabel" name="lblSearchCriteria"><property name="text"><string>Search Criteria:</string></property></widget></item>
+          <item><widget class="QLineEdit" name="txtSearchDest"><property name="placeholderText"><string>Filter Destination City...</string></property></widget></item>
+          <item><widget class="QLabel" name="lblFrom"><property name="text"><string>From:</string></property></widget></item>
+          <item><widget class="QDateEdit" name="dateSearchFrom"/></item>
+          <item><widget class="QLabel" name="lblTo"><property name="text"><string>To:</string></property></widget></item>
+          <item><widget class="QDateEdit" name="dateSearchTo"/></item>
+          <item><widget class="QPushButton" name="btnExecSearch"><property name="text"><string>Execute Search Query</string></property></widget></item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_Tables">
+          <item>
+           <widget class="QTableWidget" name="tblRoutes">
+            <column><property name="text"><string>ID</string></property></column>
+            <column><property name="text"><string>Path Layout</string></property></column>
+            <column><property name="text"><string>Distance</string></property></column>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="tblSchedules">
+            <column><property name="text"><string>Trip ID</string></property></column>
+            <column><property name="text"><string>Route Reference</string></property></column>
+            <column><property name="text"><string>Bus Allocation</string></property></column>
+            <column><property name="text"><string>Time Window</string></property></column>
+            <column><property name="text"><string>Available Seats</string></property></column>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+
+      <widget class="QWidget" name="tabPassengers">
+       <attribute name="title">
+        <string>Passenger Relationships</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QFrame" name="framePassLeft">
+          <property name="maximumSize"><size><width>350</width><height>16777215</height></size></property>
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <item><widget class="QLabel" name="labelPassTitle"><property name="text"><string>&lt;b&gt;Passenger Profile Registration&lt;/b&gt;</string></property></widget></item>
+           <item>
+            <layout class="QFormLayout" name="formLayoutPass">
+             <item row="0" column="0"><widget class="QLabel" name="lblPassID"><property name="text"><string>Passenger ID:</string></property></widget></item>
+             <item row="0" column="1"><widget class="QLineEdit" name="txtPassID"/></item>
+             <item row="1" column="0"><widget class="QLabel" name="lblFullName"><property name="text"><string>Full Name:</string></property></widget></item>
+             <item row="1" column="1"><widget class="QLineEdit" name="txtFullName"/></item>
+             <item row="2" column="0"><widget class="QLabel" name="lblNID"><property name="text"><string>National ID/Passport:</string></property></widget></item>
+             <item row="2" column="1"><widget class="QLineEdit" name="txtNID"/></item>
+             <item row="3" column="0"><widget class="QLabel" name="lblContact"><property name="text"><string>Contact Line:</string></property></widget></item>
+             <item row="3" column="1"><widget class="QLineEdit" name="txtContact"/></item>
+             <item row="4" column="0"><widget class="QLabel" name="lblEmail"><property name="text"><string>Email Address:</string></property></widget></item>
+             <item row="4" column="1"><widget class="QLineEdit" name="txtEmail"/></item>
+             <item row="5" column="0"><widget class="QLabel" name="lblPassType"><property name="text"><string>Passenger Sub-Type:</string></property></widget></item>
+             <item row="5" column="1">
+              <widget class="QComboBox" name="cmbPassSubType">
+               <item><property name="text"><string>Standard</string></property></item>
+               <item><property name="text"><string>VIP</string></property></item>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item><widget class="QPushButton" name="btnCommitRecord"><property name="text"><string>Commit Record</string></property></widget></item>
+           <item><spacer><property name="orientation"><enum>Qt::Vertical</enum></property></spacer></item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <item><widget class="QLineEdit" name="txtSearchProfile"><property name="placeholderText"><string>Live Search Profile Name or ID...</string></property></widget></item>
+          <item>
+           <widget class="QTableWidget" name="tblPassengers">
+            <column><property name="text"><string>Passenger ID</string></property></column>
+            <column><property name="text"><string>Name</string></property></column>
+            <column><property name="text"><string>ID Number</string></property></column>
+            <column><property name="text"><string>Classification Profile</string></property></column>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+
+      <widget class="QWidget" name="tabTicketing">
+       <attribute name="title">
+        <string>Ticketing Desk Dashboard</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <item>
+           <layout class="QFormLayout" name="formLayoutTicket">
+            <item row="0" column="0"><widget class="QLabel" name="lblTargetTrip"><property name="text"><string>Target Route Trip:</string></property></widget></item>
+            <item row="0" column="1"><widget class="QComboBox" name="cmbTargetTrip"/></item>
+            <item row="1" column="0"><widget class="QLabel" name="lblBookingPass"><property name="text"><string>Booking Passenger:</string></property></widget></item>
+            <item row="1" column="1"><widget class="QComboBox" name="cmbBookingPass"/></item>
+           </layout>
+          </item>
+          <item><widget class="QLabel" name="labelMapTitle"><property name="text"><string>&lt;b&gt;Interactive Layout Seating Topology Grid Map&lt;/b&gt;</string></property></widget></item>
+          <item><widget class="QLabel" name="labelLegend"><property name="text"><string>Color Status: &lt;font color=&quot;#FFD700&quot;&gt;■&lt;/font&gt; VIP Seat Available | &lt;font color=&quot;green&quot;&gt;■&lt;/font&gt; Economy Available | &lt;font color=&quot;red&quot;&gt;■&lt;/font&gt; Booked Seat Position</string></property></widget></item>
+          <item>
+           <widget class="QFrame" name="frameSeatMap">
+            <property name="frameShape"><enum>QFrame::StyledPanel</enum></property>
+            <property name="sizePolicy"><sizepolicy hsizetype="Expanding" vsizetype="Expanding"><horstretch>0</horstretch><verstretch>0</verstretch></sizepolicy></property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QFrame" name="frameTicketRight">
+          <property name="maximumSize"><size><width>400</width><height>16777215</height></size></property>
+          <layout class="QVBoxLayout" name="verticalLayout_9">
+           <item><widget class="QLabel" name="labelLogTitle"><property name="text"><string>&lt;b&gt;Global Manifest Active Booking Records History Log&lt;/b&gt;</string></property></widget></item>
+           <item>
+            <widget class="QTableWidget" name="tblHistoryLog">
+             <column><property name="text"><string>Ref Reference</string></property></column>
+             <column><property name="text"><string>Passenger Name</string></property></column>
+             <column><property name="text"><string>Trip Code ID</string></property></column>
+             <column><property name="text"><string>Seat</string></property></column>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_5">
+             <item><widget class="QLineEdit" name="txtVoidRef"><property name="placeholderText"><string>Enter Reference to void booking...</string></property></widget></item>
+             <item><widget class="QPushButton" name="btnVoidTicket"><property name="text"><string>Void Ticket</string></property></widget></item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
