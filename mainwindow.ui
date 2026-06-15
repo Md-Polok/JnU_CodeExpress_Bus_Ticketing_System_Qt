@@ -91,10 +91,20 @@ QComboBox {
     background-color: #ffffff;
     border: 1px solid #ccc;
     padding: 4px;
+}
+
+QTabBar::tab {
+    color: #1f2937; /* Forces text to always be a clear, dark charcoal color */
+    background-color: #f3f4f6; /* Light gray background for unselected tabs */
+    padding: 6px 12px;
+}
+QTabBar::tab:selected {
+    background-color: #374151; /* Keeps your dark gray active tab */
+    color: white; /* White text for the active tab */
 }</string>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tabFleet">
        <attribute name="title">
